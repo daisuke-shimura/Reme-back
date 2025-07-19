@@ -4,9 +4,6 @@ class Admin::QuestionsController < ApplicationController
     render json: questions
   end
 
-  def new
-  end
-
   def create
     question = Question.new(question_params)
     question.save!
@@ -16,10 +13,6 @@ class Admin::QuestionsController < ApplicationController
   def show
     question = Question.find(params[:id])
     render json: question
-  end
-
-  def edit
-
   end
 
   def update

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get "/sample" => "application#sample"
   resources :users, only: [:show, :edit, :update, :delete]
-
+  scope module: :public do
+    resources :results, only: [:index, :create, :show]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
